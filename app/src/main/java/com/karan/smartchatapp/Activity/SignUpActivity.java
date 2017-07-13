@@ -64,7 +64,9 @@ public class SignUpActivity extends AppCompatActivity {
         QBAuth.createSession().performAsync(new QBEntityCallback<QBSession>() {
             @Override
             public void onSuccess(QBSession qbSession, Bundle bundle) {
+
             }
+
             @Override
             public void onError(QBResponseException e) {
                 Log.e("ERROR",e.getMessage());
