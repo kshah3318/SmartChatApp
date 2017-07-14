@@ -19,7 +19,7 @@
                 android:id="@+id/signup_etUsernName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Enter User Name"
+                android:hint="Enter Username"
                 android:inputType="text|textNoSuggestions"
                 android:singleLine="true"/>
         </android.support.design.widget.TextInputLayout>
@@ -31,7 +31,7 @@
                 android:id="@+id/signup_etUserPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Enter User Name"
+                android:hint="Enter Password"
                 android:inputType="textPassword|textNoSuggestions"
                 android:singleLine="true"/>
         </android.support.design.widget.TextInputLayout>
