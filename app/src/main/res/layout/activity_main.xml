@@ -73,5 +73,9 @@
         style="@style/Widget.AppCompat.Button.Borderless"
         />
     </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="don' have account ?? sign up"/>
     </LinearLayout>
 </RelativeLayout>
