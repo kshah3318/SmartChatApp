@@ -72,6 +72,11 @@
         android:layout_marginLeft="5dp"
         style="@style/Widget.AppCompat.Button.Borderless"
         />
+
     </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Don't have account ?"/>
     </LinearLayout>
 </RelativeLayout>
