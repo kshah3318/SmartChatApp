@@ -26,7 +26,7 @@ public class SignUpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-        registerSession();
+         registerSession();
         btnSignUp = (Button) findViewById(R.id.btnSignUp);
         btnCancel = (Button) findViewById(R.id.btnCancel);
         etUserName = (EditText) findViewById(R.id.signup_etUsernName);
@@ -45,22 +45,31 @@ public class SignUpActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),username, Toast.LENGTH_SHORT).show();
                 Toast.makeText(getApplicationContext(),password, Toast.LENGTH_SHORT).show();
                 QBUser qbUser=new QBUser(username,password);
-                QBUsers.signUp(qbUser).performAsync(QBEntityCallback );
+                QBUsers.signUp(qbUser).performAsync(new QBEntityCallback<QBUser>() {
+                    @Override
+                    public void onSuccess(QBUser qbUser, Bundle bundle) {
+                        Toast.makeText(getApplicationContext(),"Registration Successfull",Toast.LENGTH_LONG).show();
+                        finish();
+                    }
+                    @Override
+                    public void onError(QBResponseException e) {
+                    }
+                });
             }
         });
     }
     private void registerSession()
     {
-        QBAuth.createSession().performAsync(new QBEntityCallback<QBSession>() {
-            @Override
-            public void onSuccess(QBSession qbSession, Bundle bundle) {
+          QBAuth.createSession().performAsync(new QBEntityCallback<QBSession>() {
+              @Override
+              public void onSuccess(QBSession qbSession, Bundle bundle) {
 
-            }
+              }
 
-            @Override
-            public void onError(QBResponseException e) {
-                Log.e("ERROR",e.getMessage());
-            }
-        });
+              @Override
+              public void onError(QBResponseException e) {
+                  Log.d("ERROR",e.getMessage());
+              }
+          });
     }
 }
