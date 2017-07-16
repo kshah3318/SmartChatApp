@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SmartChatApp</string>
+    <string name="dont_forget">Forget Password?</string>
 </resources>

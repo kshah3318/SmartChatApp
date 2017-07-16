@@ -78,6 +78,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="don' have account ?? sign up"/>
+            android:text="@string/dont_forget"/>
     </LinearLayout>
 </RelativeLayout>
