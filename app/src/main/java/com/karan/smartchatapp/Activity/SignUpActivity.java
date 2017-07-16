@@ -45,7 +45,18 @@ public class SignUpActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),username, Toast.LENGTH_SHORT).show();
                 Toast.makeText(getApplicationContext(),password, Toast.LENGTH_SHORT).show();
                 QBUser qbUser=new QBUser(username,password);
-                QBUsers.signUp(qbUser).performAsync(QBEntityCallback );
+                QBUsers.signUp(qbUser).performAsync(new QBEntityCallback<QBUser>() {
+                    @Override
+                    public void onSuccess(QBUser qbUser, Bundle bundle) {
+
+                        Toast.makeText(getApplicationContext(),"Registered Successfully",Toast.LENGTH_LONG);
+                        finish();
+                    }
+                    @Override
+                    public void onError(QBResponseException e) {
+
+                    }
+                });
             }
         });
     }
